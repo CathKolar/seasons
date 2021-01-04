@@ -12,6 +12,12 @@ class App extends React.Component {
     (err)=> {this.setState({errorMessage: err.message})}
 );
     }
+    /*componentDidMount(){
+        console.log('My component was rendered to the screen');
+    }
+    componentDidUpdate(){
+        console.log('My component was just updated - it rerendered!')
+    }*/
     render(){
         if(this.state.errorMessage && !this.state.lat){
             return <div>Error: {this.state.errorMesage}</div>
