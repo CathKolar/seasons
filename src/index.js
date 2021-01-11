@@ -11,19 +11,20 @@ class App extends React.Component {
     (err)=> this.setState({errorMessage: err.message})
 );
     }
-     /*
-     componentDidUpdate(){
-        console.log('My component was just updated - it rerendered!')
-    }
-    */
-    render(){
-        if(this.state.errorMessage && !this.state.lat){
+ renderContent (){
+     if(this.state.errorMessage && !this.state.lat){
             return <div>Error: {this.state.errorMesage}</div>
         }
         if(!this.state.errorMessage && this.state.lat){
             return <SeasonDisplay lat={this.state.lat}/>
         }
-        return <Spinner message="Please accept location request"/>;
+        return <Spinner message="Please accept location request"/>;}
+render(){
+        return(
+            <div>
+                {this.renderContent()}
+            </div>
+        );
     }
 }
 
